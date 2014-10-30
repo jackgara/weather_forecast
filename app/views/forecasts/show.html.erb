@@ -1,0 +1,13 @@
+<h1>New + Show forecast</h1>
+
+	<div id="left_col">
+		<%= form_tag(:action => 'create') do  %>
+		<%= render(:partial => "form") %>
+		<br> 
+		<%= submit_tag("Get Weather Report") %>
+		<% end %>
+	</div>
+	<div id="right_col">	 
+	<h2> Forecast </h2>
+		<%= @forecast.inspect  %>
+	</div>	

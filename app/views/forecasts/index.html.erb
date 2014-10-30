@@ -1,0 +1,99 @@
+  <div id="right_col">   
+    <div id="top_current">
+          <h1> Forecast for : <%= @forecast.current['display_location']['city'] %> </h1>
+              <table class="current">
+                <thead>
+                  <tr>
+                    <% day=Date.today%>
+                      <th><%= day.strftime('%a %d') %></th>
+                     
+                  </tr>
+
+                </thead>
+                <tbody>
+                  <h2>Current Forecast Weather :<h2> <br>
+                  <tr>
+                    <td> 
+
+
+                      <div class="small-3 columns">
+                        <div id="curIcon"><img src=<%= @forecast.current['icon_url'] %> alt="Clear" class="wx-data"></div>
+                      
+                      <div id="curTemp" style="color: #feae3c;">
+                          <span class="wx-value"><%=@forecast.current['temp_c']%></span>
+                          <span class="wx-unit">°C</span>
+                      </div>
+                      </div>
+                        Pressure: <%= @forecast.current['pressure_mb'] %><br>
+                        Visibility:<%= @forecast.current['visibility_km'] %><br>
+                        Weather :<%= @forecast.current['weather'] %><br>
+                        Dew Point: <%= @forecast.current['dewpoint_c'] %><br>
+                        Humidity:  <%= @forecast.current['relative_humidity'] %><br>
+                        Heat Index:  <%= @forecast.current['heat_index'] %><br>
+                        Wind:  <%= @forecast.current['wind_string'] %><br>
+                       
+                        
+                     </td>
+                   </tr>
+                   <tr> 
+                      
+                      <table id="hourly">
+
+                      <thead>
+                      INFO GRAPHICS :::: NEXT HOURS<br>
+                        <tr>
+                                                    
+                          <% @forecast.hourly.each {|f| %>
+                           <th><%= f['FCTTIME']['hour'] %></th>
+                           <% } %>
+                        </tr>
+                       </thead>
+                        <tbody>
+                         <tr>
+                          <% @forecast.hourly.each {|f| %>
+                                <td>
+                                  <%= f['temp']['metric']%>
+                              </td>
+                            <% } %>
+                         </tr>
+                        </tbody>
+                      </table>
+
+                    </tr>
+               </tbody>
+              </table>  
+    </div>
+    <div id="bottom_weekly">      
+
+        <h2> Forecast Prediction</h2>
+            <table class="weekly">
+            <thead>
+              <tr>
+                 <% @forecast.daysimple.each {|d| 
+                    date=d['date'] %>
+                  <th><%= date['weekday_short'] + " " + date['day'].to_s + "/" + date['month'].to_s %> </th>
+                   <% } %>  
+              </tr>
+            </thead>
+            <tbody>
+              Forecast Weather  : <br>
+              <tr>
+                
+                <% @forecast.daysimple.each {|d| %>
+                <td>  
+                      <%= d['high']['celsius'] + "|" + d['low']['celsius'] %>  <br>
+                      Humidity: <%= d['avehumidity'] %><br>
+                      Condition : <%= d['conditions'] %><br>
+                      Precipitations: <%= d['qpf_allday']['mm'].to_s + "mm" %><br>
+                      <img src= <%=d['icon_url'] %> />
+                 </td>
+                  <% } %>      
+              </tr>
+            </tbody>
+            </table>
+    </div>
+
+
+    <p> </p>
+  </div>  
+

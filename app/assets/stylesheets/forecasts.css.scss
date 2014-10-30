@@ -1,0 +1,119 @@
+// Place all the styles related to the Forecasts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+body{
+	
+}
+
+h1{
+	text-align:center;
+
+}
+
+h2.form{
+	text-align:left;
+}
+
+div#left_col{
+ width: 20%; 
+ margin-top:50px;
+ float: left;
+ font-family: "verb","Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
+}
+
+.notice{
+	font-size: 12px;
+}
+div#right_col{
+float: left; width: 80%;
+
+}
+div#top_current{
+width:100%;
+display:table;
+font-family: "verb","Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
+
+}
+div#bottom_weekly{
+width:100%;	
+display:table;
+font-family: "verb","Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
+}
+table.weekly{
+width: 100%;
+table-layout:fixed;
+display:table;
+border-color: #CCCCCC;
+border-style: solid;
+border-width: thin;
+}
+td {
+border-color: #CCCCCC;
+border-style: solid;
+border-width: thin;
+}
+table.current{
+width: 30%;
+table-layout:fixed;
+float:left;
+border-color: #CCCCCC;
+border-style: solid;
+border-width: thin;
+}
+table#hourly{
+width: 70%;
+table-layout:fixed;
+float:left;
+display:table;
+}
+
+div#curTemp{
+height: 85px;
+line-height: 75px;
+text-align: center;
+color: #feae3c;
+
+
+font-style: normal;
+line-height: normal;
+}
+
+#curTemp .wx-value{
+font-size: 34px ;
+font-style: normal;
+font-weight: normal;
+font-family:"verblight","Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif ;
+}
+
+#curTemp .wx-unit{
+font-size: 1.5rem;
+}
+
+#curIcon IMG {
+
+}
+#small-3 {
+
+}
+
+.columns {
+ position: relative; 
+ padding-left: 0.625rem; 
+ padding-right: 0.625rem; 
+ float: right; 
+}
+
+
+
+
+
+// DatePicker
+div.ui-datepicker{
+ font-size:7px;
+ width:22em;
+}
+#ui-datepicker-div > table > tbody > tr > td {
+ font-size:7px;
+}

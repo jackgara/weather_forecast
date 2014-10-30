@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WeatherForecast</title>
+  <%= stylesheet_link_tag    'application', media: 'all'%>
+  <%= javascript_include_tag 'application' , "data-turbolinks-track" => true %>
+   <%= javascript_tag do %>
+    window.hourly_data= <%=@forecast.hourly_data.to_json %>;
+  <% end %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+ 
+   <div id="left_col">
+   <% if !flash[:notice].blank? %>
+        <div class="notice">
+          <%= flash[:notice] %>
+        </div>
+ <% end %>
+    <h2 id="form">New forecast</h2>
+    <%= render(:partial => "form", :locals => {:forecast => @forecast}) %>
+    <br> 
+  </div>
+<%= yield %>
+   
+
+    <div id="container" style="height: 400px; min-width: 310px"></div>
+</body>
+</html>
