@@ -40,9 +40,8 @@
                       <table id="hourly">
 
                       <thead>
-                      INFO GRAPHICS :::: NEXT HOURS<br>
+                      
                         <tr>
-                                                    
                           <% @forecast.hourly.each {|f| %>
                            <th><%= f['FCTTIME']['hour'] %></th>
                            <% } %>

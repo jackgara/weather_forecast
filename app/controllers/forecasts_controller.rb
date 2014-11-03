@@ -24,7 +24,7 @@ class ForecastsController < ApplicationController
 
   private
     def default_params
-      defparams = {:location => "autoip"}
+      defparams = {:location => "London"}
     end
 
     # Never trust parameters from the scary internet, only allow the white list through. %{params[city]}
