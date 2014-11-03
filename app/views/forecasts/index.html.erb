@@ -7,16 +7,11 @@
                   <tr>
                     <% day=Date.today%>
                       <th><%= day.strftime('%a %d') %></th>
-                     
                   </tr>
-
                 </thead>
                 <tbody>
-                  <h2>Current Forecast Weather :<h2> <br>
                   <tr>
                     <td> 
-
-
                       <div class="small-3 columns">
                         <div id="curIcon"><img src=<%= @forecast.current['icon_url'] %> alt="Clear" class="wx-data"></div>
                       
@@ -76,7 +71,7 @@
               </tr>
             </thead>
             <tbody>
-              Forecast Weather  : <br>
+             
               <tr>
                 
                 <% @forecast.daysimple.each {|d| %>
@@ -92,8 +87,5 @@
             </tbody>
             </table>
     </div>
-
-
-    <p> </p>
   </div>  
 

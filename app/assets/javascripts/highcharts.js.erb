@@ -1,19 +1,23 @@
 $(function () {
-   $('#hourly').highcharts({
+   $('#hourly').highcharts('StockChart', {
    
           chart: {
-             renderTo: 'container'
+             renderTo: 'hourly'
           },
            rangeSelector : {
                 selected : 1,
-                inputEnabled: $('#container').width() > 480
+                inputEnabled: $('#hourly').width() > 480
             },
 
             title : {
                 text : 'Weather graph'
             },
             xAxis: {
-                type: "daytime"
+                title:{
+                    text: "Datetime"
+                },
+                type: 'datetime',
+                
             },
             yAxis: {
                 title:{
@@ -27,43 +31,15 @@ $(function () {
                 hideDelay: 1,
                 borderWidth: 0
             },
-            legend: {
-                layout: 'vertical',
-                align: 'left',
-                verticalAlign: 'top',
-                x: 100,
-                y: 70,
-                floating: true,
-                backgroundColor: '#FFFFFF',
-                borderWidth: 1
-            },
+           
             plotOptions: {
-                scatter: {
-                    marker: {
-                        radius: 5,
-                        states: {
-                            hover: {
-                                enabled: true,
-                                lineColor: 'rgb(100,100,100)'
-                            }
-                        }
-                    },
-                    states: {
-                        hover: {
-                            marker: {
-                                enabled: false
-                            }
-                        }
-                    },
-                    tooltip: {
-                        headerFormat: '<b>{series.temp}</b><br>',
-                        pointFormat: '{point.x} , {point.y} C'
-                    }
-                }
+                
             },
           series: [{
+            name: "Temp",
             temp: "Temperature",
             data: hourly_data ,
+            
           }]
     });
 });

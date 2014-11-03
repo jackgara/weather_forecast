@@ -65,9 +65,12 @@ class ForecastsController < ApplicationController
     def create_json_hourly_data
       data= []
       @forecast.hourly.each do |h|
-        hour=[h['FCTTIME']['epoch'].to_i , h['temp']['metric'].to_i]
-        data.push(hour)
+        time=(h['FCTTIME']['epoch'].to_i) * 1000
+        hour_data=[time , h['temp']['metric'].to_i]
+        data.push(hour_data)
       end
+      
+        puts 'dataaaaa' + data.join(' / ')
       return data
     end
 
